@@ -14,8 +14,7 @@
 
 cc_library_shared {
     name: "libcamera_client",
-    defaults: ["camera_parameter_library_defaults"],
-
+    
     aidl: {
         export_aidl_headers: true,
         local_include_dirs: ["aidl"],
@@ -34,6 +33,7 @@ cc_library_shared {
         "Camera.cpp",
         "CameraMetadata.cpp",
         "CaptureResult.cpp",
+        "CameraParameters.cpp",
         "CameraParameters2.cpp",
         "ICamera.cpp",
         "ICameraClient.cpp",
@@ -74,16 +74,6 @@ cc_library_shared {
         "-Wall",
         "-Wextra",
     ],
-
-}
-
-cc_library_static {
-    name: "libcamera_parameters",
-
-    export_include_dirs: [
-        "include",
-    ],
-    srcs: ["CameraParameters.cpp"],
 
 }
 
